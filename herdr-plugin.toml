@@ -1,0 +1,29 @@
+id = "devboards.board"
+
+name = "Dev Boards"
+
+version = "0.1.0"
+
+min_herdr_version = "0.7.0"
+
+description = "Your Dev Boards missions live in a Herdr pane — all lanes, agent-pane binding, refresh, and one key to open the app"
+
+platforms = ["linux", "macos"]
+
+[[actions]]
+id = "open"
+title = "Open Dev Boards board"
+contexts = ["workspace", "global"]
+command = ["python3", "board.py"]
+
+[[actions]]
+id = "snapshot"
+title = "Dev Boards snapshot (plain text)"
+contexts = ["workspace", "global"]
+command = ["python3", "board.py", "--plain"]
+
+[[panes]]
+id = "board"
+title = "Dev Boards"
+placement = "tab"
+command = ["python3", "board.py"]
